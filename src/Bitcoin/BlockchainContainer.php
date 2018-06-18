@@ -147,8 +147,7 @@ class BlockchainContainer
             'note'   => $public_note,
             'fee'    => $fee,
         ];
-        $param = http_build_query($data, '', '&');
-        $endpoint = '/payment'.$this->pass.'&'.$param;
+        $endpoint = '/payment'.$this->pass.'&to='.$to_address.'&amount='.$amount.'&from='.$from_address;
         $results = $this->getJson($endpoint);
 
         return $results;
