@@ -147,7 +147,7 @@ class BlockchainContainer
             'note'   => $public_note,
             'fee'    => $fee,
         ];
-        $param = http_build_query($data);
+        $param = http_build_query($data, '', '&');
         $endpoint = '/payment'.$this->pass.'&'.$param;
         $results = $this->getJson($endpoint);
 
@@ -170,7 +170,7 @@ class BlockchainContainer
             'from'       => $from_address,
             'fee'        => $fee,
         ];
-        $param = http_build_query($data);
+        $param = http_build_query($data, '', '&');
         $endpoint = '/sendmany'.$this->pass.'&'.$param;
         $results = $this->getJson($endpoint);
 
